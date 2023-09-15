@@ -1,6 +1,5 @@
 const express = require("express");
 const morgan = require("morgan");
-const router = require("./routes");
 
 const server = express();
 
@@ -12,7 +11,7 @@ server.use(express.json());
 server.use(require("./routes"));// server.use(require("./routes"))
 
 server.use("*",(req,res)=>{
-    res,status(404).send("not found");
+    res.status(404).send("not found");//ruta no encontrada
 })
 // modularizar esta funcion poner en carpeta de handlers quede mejor
 server.use((err,req,res,next)=>{
@@ -21,6 +20,6 @@ server.use((err,req,res,next)=>{
         message:err.message,
     });
 })
-//routes
+
 
 module.exports = server;

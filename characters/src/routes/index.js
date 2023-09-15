@@ -4,8 +4,8 @@ const middlewares = require('../middlewares')
 
 const router = Router();
 
-router.get('/',controllers.getCharacters)
-router.post('/',middlewares.characterValidation, controllers.createCharacter);
+router.get('/characters',controllers.getCharacters)
+router.post('/characters',middlewares.characterValidation, controllers.createCharacter);
 /* router.put('/:id',controllers.updateCharacter)
 router.delete('/:id',controllers.deleteCharacter) */
 

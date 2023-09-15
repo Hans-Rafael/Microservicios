@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(router);
 
 server.use("*",(req,res)=>{
-    res,status(404).send("not found");
+    res.status(404).send("not found");
 })
 server.use((err,req,res,next)=>{
     res.status(err.statusCode || 500).send({
