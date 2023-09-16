@@ -10,19 +10,19 @@ app.use(morgan('dev'));
 
 app.use("./characters",
     createProxyMiddleware({
-        target:'https://localhost:8001',
+        target:"https://characters:8001",
         changeOrigin:true,
     })
 );
 app.use("./films",
     createProxyMiddleware({
-        target:'https://localhost:8002',
+        target:'https://films:8002',
         changeOrigin:true,
     })
 );
 app.use("./planets",
     createProxyMiddleware({
-        target:'https://localhost:8003',
+        target:'https://planets:8003',
         changeOrigin:true,
     })
 );
