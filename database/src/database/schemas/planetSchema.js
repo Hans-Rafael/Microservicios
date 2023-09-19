@@ -1,6 +1,6 @@
 const { Schema } = require("mongoose");
 
-planetShema = new Schema({
+const planetShema = new Schema({
     _id: String,
     name:String,
     rotation_period: String,
