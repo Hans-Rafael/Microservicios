@@ -1,7 +1,8 @@
-//aqui se crea la conexion con la base de datos
+//Aqui crearemos la conexion con la base de datos
 const mongoose = require("mongoose");
 const { MONGO_URI } = require("../config/envs");
 
+// Se crea la conexion con la base de datos
 const conn = mongoose.createConnection(MONGO_URI);
 
 /* const Character = conn.model(
@@ -19,8 +20,9 @@ const conn = mongoose.createConnection(MONGO_URI);
   .populate("films",["_id","title"])// aqui se ponen los campos que quiero que se muestren
   .then((res) => console.log(res[0])); */
 
+// Exportamos los modelos
 module.exports = {
-  character: conn.model("Character", require("./schemas/charactersSchema")),
-  films: conn.model("Films", require("./schemas/filmSchema")),
-  planet: conn.model("Planet", require("./schemas/planetSchema")),
+  Character: conn.model("Character", require("./schemas/characterSchema")),
+  Film: conn.model("Film", require("./schemas/filmSchema")),
+  Planet: conn.model("Planet", require("./schemas/planetSchema")),
 };
