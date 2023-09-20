@@ -1,7 +1,7 @@
 const server = require("./src/server.js");
 
 //testing
-const { Character, Film, Planet } = require("./src/database");
+//const { Character, Film, Planet } = require("./src/database");
 
 //test1
 /* 
