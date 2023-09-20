@@ -27,7 +27,8 @@ Character.get('0')
 */
 //test 4
 /*  Character.deleteById('205').then((res) => console.log(res)); */
+const PORT = 8004;
 
-server.listen(8004, () => {
-  console.log("db Server is running on PORT 8004");
+server.listen(PORT, () => {
+  console.log(`db Server is running on PORT ${PORT}`);
 });
