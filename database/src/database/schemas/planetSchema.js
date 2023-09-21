@@ -34,4 +34,8 @@ planetSchema.statics.deleteById = function (_id) {
   return this.deleteOne({ _id });
 };
 
+characterSchema.statics.updateById = function(_id, planet) {
+  return this.updateOne({ _id }, planet)
+};
+
 module.exports = planetSchema;

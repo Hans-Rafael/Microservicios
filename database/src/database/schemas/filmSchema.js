@@ -31,5 +31,9 @@ filmSchema.statics.deleteById = function(_id) {
   return this.deleteOne({ _id })
 };
 
+characterSchema.statics.updateById = function(_id, film) {
+  return this.updateOne({ _id }, film)
+};
+
 
 module.exports = filmSchema;
