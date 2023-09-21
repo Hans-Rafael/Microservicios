@@ -7,6 +7,6 @@ const router = Router();
 
 
 router.get('/planets',controllers.getPlanets);
-router.post('/planets',middlewares.planetValidation, controllers.createCharacter);
+router.post('/planets',middlewares.planetValidation, controllers.createPlanet);
 
 module.exports = router; 

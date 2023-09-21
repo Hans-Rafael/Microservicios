@@ -24,7 +24,7 @@ const characterSchema = new Schema(
   
 );
 
-//add metodo d nombre list q sera metodo del model
+//add metodo d nombre list q sera metodo del model y no debe ser funcion flecha
 
 characterSchema.statics.list = async function(){
   return await this.find()
@@ -46,5 +46,8 @@ characterSchema.statics.deleteById = function(_id) {
   return this.deleteOne({ _id: _id })
 };
 
+characterSchema.statics.updateById = function(_id, character) {
+   return this.updateOne({ _id }, character)
+};
 
 module.exports = characterSchema;

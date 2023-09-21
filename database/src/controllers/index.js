@@ -1,4 +1,9 @@
-///const {catchAsync} = require('../utils');
+const {catchAsync} = require('../utils/catchAsync');
+
 module.exports =  {
-    createCharacter:/*catchAsync( */ require("./addCharacter"),
+    addDatabase:catchAsync( require("./addDatabase")),
+    getDatabase:catchAsync( require("./getDatabase")),
+    getDatabases:catchAsync( require("./getDatabases")),
+    deleteDatabase:catchAsync( require("./deleteDatabase")),
+    updateDatabase:catchAsync( require("./putDocument")),
 }
