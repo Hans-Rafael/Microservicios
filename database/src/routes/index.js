@@ -19,7 +19,7 @@ router.get("/:model/:id", validateModel, async (req, res) => {
 });
 
 router.post("/:model", validateModel, async (req, res) => {
-  const model = req.params;
+  const {model} = req.params;
   const data = req.body;
   const response = await store[model].insert(data);
   res.status(200).json(response);
@@ -28,8 +28,10 @@ router.post("/:model", validateModel, async (req, res) => {
 
 router.delete("/:model/:id", validateModel, async (req, res) => {
   const { model, id } = req.params;
-  const response = await store[model].delete(id);
+  const response = await store[model].deleteById(id);
   res.status(200).json(response);
 });
+
+//router.put
 
 module.exports = router;

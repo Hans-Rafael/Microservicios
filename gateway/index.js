@@ -26,6 +26,12 @@ app.use("./planets",
         changeOrigin:true,
     })
 );
+app.use("./database",
+    createProxyMiddleware({
+        target:'https://database:8004',
+        changeOrigin:true,
+    }) 
+);
 
 const Port = 8000;
 app.listen(8000, () => {

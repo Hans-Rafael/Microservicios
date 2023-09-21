@@ -18,7 +18,7 @@ Character.get('0')
 //test3
 /*
  Character.insert({
-   _id: "205",
+   _id: "201",
    name: "Hans xxx ",
    birth_year: '1/1/19xy',
    gender: "male",
@@ -26,8 +26,9 @@ Character.get('0')
 }).then((res) => console.log(res)); 
 */
 //test 4
-/*  Character.deleteById('205').then((res) => console.log(res)); */
-const PORT = 8004;
+ // Character.deleteById('201').then((res) => console.log(res)); 
+
+ const PORT = 8004;
 
 server.listen(PORT, () => {
   console.log(`db Server is running on PORT ${PORT}`);
