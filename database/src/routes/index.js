@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { validateModel } = require("../middlewares");
 const controllers = require("../controllers");
 //const store = require("../database");
-
+  
 const router = Router();
 
 router.get("/:model", validateModel, controllers.getDatabase);

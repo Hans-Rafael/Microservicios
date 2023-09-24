@@ -4,8 +4,6 @@ const characterSchema = new Schema(
   {
     _id: {
       type: String, //Schema.Types.UUID, // Can also do `_id: 'UUID'`
-      required: true,
-      unique: true,
     },
     name: {
       type: String,

@@ -13,7 +13,7 @@ Character.find()
 //testing 2
 /* Character.list()
 .then((res) => console.log(res));
-Character.get('0')
+Character.get('2')
 .then((res) => console.log(res)); */
 //test3
 /*

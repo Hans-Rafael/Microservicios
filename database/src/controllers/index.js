@@ -1,4 +1,4 @@
-const {catchAsync} = require('../utils/catchAsync');
+const {catchAsync} = require('../utils');
 
 module.exports =  {
     addDatabase:catchAsync( require("./addDatabase")),
