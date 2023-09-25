@@ -5,9 +5,5 @@ class ClientError extends Error {
         this.statusCode = statusCode;
     }
 }
-/*  function ClientError ( message, statusCode ) {
-    super(message);
-    this.statusCode = statusCode;
- } */
 
  module.exports ={ ClientError};
