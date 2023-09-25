@@ -1,3 +1,5 @@
 module.exports = {
-    characterValidation: require("./characterValidation")
-}
+  characterValidation: require("./characterValidation"),
+  errorHandler: require("./errorHandler"),
+  notFound: require("./notFound"),
+};

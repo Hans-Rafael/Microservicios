@@ -1,19 +1,19 @@
 const server = require("./src/server.js");
+const conn = require("./src/config/conn")
 
 //testing
 //const { Character, Film, Planet } = require("./src/database");
 
 //test1
-/* 
-Character.find()
+/* Character.find()
 .populate('homeworld',['_id','name'])
 .populate('films',['_id','title'])
-.then((res) => console.log(res)); */
-
+.then((res) => console.log(res));
+ */
 //testing 2
 /* Character.list()
 .then((res) => console.log(res));
-Character.get('0')
+Character.get('2')
 .then((res) => console.log(res)); */
 //test3
 /*
@@ -27,9 +27,10 @@ Character.get('0')
 */
 //test 4
  // Character.deleteById('201').then((res) => console.log(res)); 
-//👍
- const PORT = 8004;
+ 
+ const PORT = process.env.PORT || 8004;
 
-server.listen(PORT, () => {
+server.listen(PORT, async() => {
+  conn()
   console.log(`db Server is running on PORT ${PORT}`);
 });
