@@ -28,9 +28,9 @@ Character.get('2')
 //test 4
  // Character.deleteById('201').then((res) => console.log(res)); 
  
- const PORT = process.env.PORT || 8004;
+ const PORT = 8004;
 
-server.listen(PORT, async() => {
-  conn()
+server.listen(PORT, () => {
+  //conn()
   console.log(`db Server is running on PORT ${PORT}`);
 });

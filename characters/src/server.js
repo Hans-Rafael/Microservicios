@@ -13,18 +13,18 @@ server.use(express.json());
 server.use(require("./routes"));//
 
 
-/* server.use("*",(req,res)=>{
+//server.use("*", notFound);
+server.use("*",(req,res)=>{
     res.status(404).send("not found");//ruta no encontrada
-}) */
+})
 // modularizar esta funcion poner en carpeta de handlers quede mejor
-/* server.use((err,req,res,next)=>{
+//server.use(errorHandler);
+server.use((err,req,res,next)=>{
     res.status(err.statusCode || 500).send({
         error:true,
         message:err.message,
     });
-}) */
-server.use("*", notFound);
-server.use(errorHandler);
+})
 
 
 module.exports = server;
