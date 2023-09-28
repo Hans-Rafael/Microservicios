@@ -1,2 +1,4 @@
+# .gitignore
 .env
 node_modules
+# git rm --cached .env Comando para eliminar de la cache y de git en caso alla subido antes
