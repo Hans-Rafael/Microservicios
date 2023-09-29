@@ -1,26 +1,16 @@
-const express = require('express');
-const morgan = require('morgan');
-const {notFound,errorHandler } = require("./middlewares");
+const express = require("express");
+const morgan = require("morgan");
+const { notFound, errorHandler } = require("./middlewares");
 
 const server = express();
 
 server.use(express.json());
-server.use(morgan('dev'));
+server.use(morgan("dev"));
 
-server.use(require("./routes"))
- 
-//server.use("*", notFound);
-server.use('*', (req, res) => {
-    res.status(404).send('Not Found');
-});
+server.use(require("./routes"));
 
-//
-//server.use(errorHandler);
-server.use((err,req,res,next)=>{
-    res.status(err.statusCode || 500).send({
-        error:true,
-        message:err.message,
-    });
-})
+server.use("*", notFound);
+
+server.use(errorHandler);
 
 module.exports = server;

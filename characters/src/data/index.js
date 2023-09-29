@@ -11,7 +11,10 @@ module.exports = {
     return results.data;
   },
   create: async (character) => {
-    const results = await axios.post("http://database:8004/Character", character);
+    const results = await axios.post(
+      "http://database:8004/Character",
+      character
+    );
     return results.data;
   },
 
@@ -20,7 +23,7 @@ module.exports = {
     //throw Error("hay un error al crear un personaje");
     throw new ClientError("hay un error al crear un personaje");
   }, */
-  
+
   update: async (id, character) => {
     return await axios
       .update(`http://database:8004/Character/${id}`, character)

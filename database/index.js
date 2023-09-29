@@ -1,5 +1,5 @@
 const server = require("./src/server.js");
-const conn = require("./src/config/conn")
+const conn = require("./src/config/conn");
 
 //testing
 //const { Character, Film, Planet } = require("./src/database");
@@ -26,9 +26,9 @@ Character.get('2')
 }).then((res) => console.log(res)); 
 */
 //test 4
- // Character.deleteById('201').then((res) => console.log(res)); 
- 
- const PORT = 8004;
+// Character.deleteById('201').then((res) => console.log(res));
+
+const PORT = 8004;
 
 server.listen(PORT, () => {
   //conn()

@@ -6,4 +6,3 @@ module.exports = async (req, res) => {
   const character = await Characters.getById(id);
   response(res, 200, character);
 };
-

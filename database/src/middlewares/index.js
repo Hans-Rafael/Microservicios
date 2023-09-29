@@ -1,5 +1,5 @@
 module.exports = {
-    validateModel: require('./validateModel'),
-    notFound: require("./notFound"),
-    errorHandler:require('./errorHandler')
+  validateModel: require("./validateModel"),
+  notFound: require("./notFound"),
+  errorHandler: require("./errorHandler"),
 };

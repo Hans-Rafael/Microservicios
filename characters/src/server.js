@@ -1,7 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const {notFound,errorHandler } = require("./middlewares");
-
+const { notFound, errorHandler } = require("./middlewares");
 
 const server = express();
 
@@ -10,8 +9,7 @@ server.use(morgan("dev"));
 server.use(express.json());
 //
 //"/characters"
-server.use(require("./routes"));//
-
+server.use(require("./routes")); //
 
 server.use("*", notFound);
 /* server.use("*",(req,res)=>{
@@ -25,6 +23,5 @@ server.use(errorHandler);
         message:err.message,
     });
 }) */
-
 
 module.exports = server;

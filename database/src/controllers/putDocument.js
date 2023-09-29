@@ -1,5 +1,5 @@
 const store = require("../database");
-const response = require('../utils/response');
+const response = require("../utils/response");
 
 module.exports = async (req, res) => {
   const { model, id } = req.params;

@@ -1,7 +1,7 @@
 const { Schema } = require("mongoose");
 
 const planetSchema = new Schema({
-  _id: { type: String,  },
+  _id: { type: String },
   name: String,
   rotation_period: String,
   orbital_period: String,
@@ -34,8 +34,8 @@ planetSchema.statics.deleteById = function (_id) {
   return this.deleteOne({ _id });
 };
 
-planetSchema.statics.updateById = function(_id, planet) {
-  return this.updateOne({ _id }, planet)
+planetSchema.statics.updateById = function (_id, planet) {
+  return this.updateOne({ _id }, planet);
 };
 
 module.exports = planetSchema;

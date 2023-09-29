@@ -1,3 +1,3 @@
 module.exports = {
-    planetValidation: require("./planetValidation")
-}
+  planetValidation: require("./planetValidation"),
+};
