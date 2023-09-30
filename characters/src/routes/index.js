@@ -6,17 +6,17 @@ const middlewares = require("../middlewares");
 const router = Router();
 
 router.get("/characters", controllers.getCharacters);
-router.get("/characters:id", controllers.getCharacter);
+router.get("/characters/:id", controllers.getCharacter);
 router.post(
   "/characters",
   middlewares.characterValidation,
   controllers.createCharacter
 );
 router.put(
-  "/characters:id",
+  "/characters/:id",
   middlewares.characterValidation,
   controllers.putCharacter
 );
-router.delete("/characters:id", controllers.deleteCharacter);
+router.delete("/characters/:id", controllers.deleteCharacter);
 
 module.exports = router;
