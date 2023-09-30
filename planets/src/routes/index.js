@@ -6,13 +6,13 @@ const middlewares = require("../middlewares");
 const router = Router();
 
 router.get("/planets", controllers.getPlanets);
-router.get("/planets:id", controllers.getPlanet);
+router.get("/planets/:id", controllers.getPlanet);
 router.post("/planets", middlewares.planetValidation, controllers.createPlanet);
 router.put(
-  "/planets:id",
+  "/planets/:id",
   middlewares.planetValidation,
   controllers.updatePlanet
 );
-router.delete("/planets:id", controllers.deletePlanet);
+router.delete("/planets/:id", controllers.deletePlanet);
 
 module.exports = router;
