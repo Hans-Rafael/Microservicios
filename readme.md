@@ -70,9 +70,9 @@ Puedes acceder a las rutas trabajando en las rutas, por ejemplo:
    El proyecto ya está en funcionamiento en una máquina virtual (VM). Sin embargo, ten en cuenta que se utiliza la versión gratuita, que tiene un límite de 90 días o ha consumido los $300 de crédito disponibles.
 
 Las rutas están disponibles en la siguiente dirección:
-- http://34.94.22.204
+- http://34.94.22.204:8000
 
 No necesitas realizar ninguna acción adicional para probar el proyecto. Solo accede a las rutas, por ejemplo:
 
-- http://34.94.22.204/characters para obtener información sobre los personajes o utiliza esta dirección IP para cualquier operación CRUD en el frontend.
+- http://34.94.22.204:8000/characters para obtener información sobre los personajes o utiliza esta dirección IP para cualquier operación CRUD en el frontend.
 
