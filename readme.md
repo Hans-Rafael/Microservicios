@@ -44,7 +44,8 @@ Este proyecto, diseñado para mejorar las habilidades (Upskilling) en microservi
 │   └── ...
 ├── docker-compose.yml
 ```
-Debes crear un archivo .env en la carpeta database con la configuración de tu MongoDB, por ejemplo:
+Debes crear un archivo .env en la carpeta database con la configuración de tu MongoDB, 
+por ejemplo:
 
 ```Shell
 MONGO_URI = username:password@config-de-mongo/starwars
