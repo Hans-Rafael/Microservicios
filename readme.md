@@ -10,7 +10,7 @@ Este proyecto, diseñado para mejorar las habilidades (Upskilling) en microservi
 - **Planets**: Proporciona información sobre los planetas de Star Wars.
 - **Database**: Un servicio de base de datos utilizado por otros servicios.
 
-## Instrucciones
+## Instrucciones 
 
 - Asegúrate de tener Docker instalado en tu sistema antes de continuar.
 
