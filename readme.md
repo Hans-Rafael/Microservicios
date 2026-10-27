@@ -1,20 +1,30 @@
-# Backend Microservices - Star Wars
+# Microservicios - Star Wars 🌌
 
-Este proyecto, diseñado para mejorar las habilidades (Upskilling) en microservicios, se basa en una arquitectura de microservicios que utiliza MongoDB Atlas como servicio de base de datos. Se utilizan contenedores Docker para implementar los microservicios, y Docker Compose orquesta todos estos contenedores. El proyecto se encuentra desplegado en una instancia de VM en Google Cloud.
+¡Hola! Te doy la bienvenida a mi proyecto de microservicios. Lo creé con un objetivo muy claro: **practicar y mejorar mis habilidades** en esta forma de construir software. Te cuento cómo está armado, para que puedas entenderlo, ejecutarlo y, si quieres, explorarlo o mejorarlo.
 
-## Servicios
+## ¿Qué es esto?
 
-- **Gateway**: Actúa como el punto de entrada de la aplicación.
-- **Characters**: Proporciona información sobre los personajes de Star Wars.
-- **Films**: Proporciona información sobre las películas de Star Wars.
-- **Planets**: Proporciona información sobre los planetas de Star Wars.
-- **Database**: Un servicio de base de datos utilizado por otros servicios.
+En lugar de construir una sola aplicación grande, dividí el proyecto en **pequeños servicios independientes**. Cada uno tiene una responsabilidad concreta y se comunica con los demás a través de la red. Todos cuentan con información del universo de Star Wars: personajes, películas y planetas.
 
-## Instrucciones 
+Para la base de datos utilizo **MongoDB Atlas**, cada servicio se empaqueta en un **contenedor Docker** y **Docker Compose** es quien los levanta y coordina todos juntos. El proyecto también está desplegado en una **máquina virtual de Google Cloud**, así que puedes probarlo sin instalar nada.
 
-- Asegúrate de tener Docker instalado en tu sistema antes de continuar.
+## Los servicios
 
-- Esta es la estructura de carpetas con Docker:
+Estas son las piezas que componen el proyecto:
+
+- **Gateway**: es la puerta de entrada. Recibe todas tus peticiones y las reenvía al servicio que corresponda.
+- **Characters**: maneja la información de los personajes de Star Wars.
+- **Films**: maneja la información de las películas.
+- **Planets**: maneja la información de los planetas.
+- **Database**: es el servicio que se encarga de hablar con MongoDB. Los demás servicios le piden los datos a él en lugar de conectarse directamente.
+
+Como regla general, tú siempre hablas con el **Gateway**, y él se encarga del resto.
+
+## Antes de empezar
+
+Lo primero que necesitas es tener **Docker** instalado en tu sistema. Si todavía no lo tienes, instálalo y verifica que esté funcionando antes de continuar.
+
+Así se ve la estructura de carpetas del proyecto:
 
 ```plaintext
 .
@@ -44,36 +54,53 @@ Este proyecto, diseñado para mejorar las habilidades (Upskilling) en microservi
 │   └── ...
 ├── docker-compose.yml
 ```
-Debes crear un archivo .env en la carpeta database con la configuración de tu MongoDB, 
-por ejemplo:
 
-```Shell
-MONGO_URI = username:password@config-de-mongo/starwars
-```
-### Ejecución
-Para ejecutar los servicios en un entorno local de desarrollo, sigue estos pasos:
+### Configura tu base de datos
 
-1. Abre una terminal y navega hasta el directorio principal del proyecto.
-
-2. Ejecuta el siguiente comando para iniciar los servicios:
+El servicio `database` necesita saber dónde está tu MongoDB. Para eso, crea un archivo `.env` dentro de la carpeta `database` con la cadena de conexión. Por ejemplo:
 
 ```shell
-docker-compose up
+MONGO_URI = username:password@config-de-mongo/starwars
 ```
-   Esto creará y ejecutará los contenedores de Docker para cada servicio definido en docker-compose.yml. Los servicios estarán disponibles en los puertos especificados en el archivo de configuración.
 
-Puedes acceder a las rutas trabajando en las rutas, por ejemplo:
-   - http://localhost:8000/characters para obtener información sobre los personajes.
-  
-  - http://localhost:8000/planets para obtener información sobre los planetas.
+Reemplaza `username`, `password` y `config-de-mongo` con los datos de tu propio clúster. Este archivo contiene información sensible, así que **no lo subas a Git**: el `.gitignore` del proyecto ya lo excluye por ti.
 
-   ### Desde la nube
-   El proyecto ya está en funcionamiento en una máquina virtual (VM). Sin embargo, ten en cuenta que se utiliza la versión gratuita, que tiene un límite de 90 días o ha consumido los $300 de crédito disponibles.
+## Cómo ejecutarlo en tu computadora
 
-Las rutas están disponibles en la siguiente dirección:
+Cuando tengas Docker y el `.env` listos, levantar el proyecto es muy sencillo:
+
+1. Abre una terminal y ve a la carpeta principal del proyecto.
+
+2. Ejecuta este comando:
+
+   ```shell
+   docker-compose up
+   ```
+
+   Docker creará y arrancará un contenedor para cada servicio definido en `docker-compose.yml`. La primera vez puede tardar un poco mientras descarga e instala todo, así que ten paciencia.
+
+Una vez que todo esté corriendo, puedes probar las rutas. Por ejemplo:
+
+- http://localhost:8000/characters para ver los personajes.
+- http://localhost:8000/planets para ver los planetas.
+- http://localhost:8000/films para ver las películas.
+
+Todas las peticiones pasan por el puerto **8000** (el Gateway), y el Gateway las redirige al servicio correcto.
+
+## Probarlo en la nube
+
+Si no quieres instalar nada, puedes usar la versión que ya está funcionando en mi máquina virtual de Google Cloud. Solo ten en cuenta que es una cuenta **gratuita**, que tiene un límite de 90 días o de consumir los $300 de crédito disponibles. Si en algún momento no responde, es probable que ese crédito se haya agotado.
+
+La dirección base es:
+
 - http://34.94.22.204:8000
 
-No necesitas realizar ninguna acción adicional para probar el proyecto. Solo accede a las rutas, por ejemplo:
+No necesitas hacer nada extra. Solo entra a las rutas, por ejemplo:
 
-- http://34.94.22.204:8000/characters para obtener información sobre los personajes o utiliza esta dirección IP para cualquier operación CRUD en el frontend.
+- http://34.94.22.204:8000/characters para ver los personajes.
 
+También puedes usar esta dirección IP para hacer cualquier operación CRUD desde un frontend.
+
+---
+
+¡Gracias por pasarte por aquí! Si tienes dudas o ideas para mejorarlo, no dudes en comentarlas. Que la fuerza te acompañe. ⭐
